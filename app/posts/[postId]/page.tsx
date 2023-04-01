@@ -1,20 +1,29 @@
 import styles from "./page.module.css";
 
+async function getPost(postId: number) {
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${postId}`
+  );
+  return res.json();
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { postId: number };
+}) {
+  const post = await getPost(params.postId);
+  return {
+    title: post.title,
+  };
+}
+
 export default async function Post({ params }: { params: { postId: number } }) {
-  const { postId } = params;
-
-  async function getPost() {
-    const res = await fetch(
-      `https://jsonplaceholder.typicode.com/posts/${postId}`
-    );
-    return res.json();
-  }
-
-  const post = await getPost();
+  const post = await getPost(params.postId);
 
   return (
     <div>
-      <span className={styles["post-num"]}>Post No: {postId}</span>
+      <span className={styles["post-num"]}>Post No: {post.id}</span>
       <h1>{post.title}</h1>
       <p>{post.body}</p>
       <p>

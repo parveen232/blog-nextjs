@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import styles from "./page.module.css";
 
@@ -5,6 +6,11 @@ async function getAllPosts() {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   return res.json();
 }
+
+export const metadata: Metadata = {
+  title: "All Posts",
+  description: "Welcome to Next.js",
+};
 
 export default async function Posts() {
   const posts = await getAllPosts();
