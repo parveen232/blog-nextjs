@@ -9,12 +9,10 @@ export default function About() {
   return (
     <div>
       <h1>About Me</h1>
+      <p>Hey, I&apos;m Parveen. I&apos;m a Jr Software Developer.</p>
       <p>
-        <p>Hey, I&apos;m Parveen. I&apos;m a Jr Software Developer.</p>
-        <p>
-          I&apos;m currently learning React.js and Next.js and curious about
-          software development technologies.
-        </p>
+        I&apos;m currently learning React.js and Next.js and curious about
+        software development technologies.
       </p>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis

@@ -15,7 +15,7 @@ body {
   margin: 50px auto 30px;
 }
 
-.sidebar {
+.navbar {
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -23,7 +23,7 @@ body {
   margin-top: 25px;
 }
 
-.sidebar > * {
+.navbar > * {
   white-space: nowrap;
   text-decoration: none;
   color: #737373;
@@ -32,11 +32,11 @@ body {
   border-radius: 5px;
 }
 
-.sidebar > *:hover {
+.navbar > *:hover {
   color: #f5f5f5;
 }
 
-.sidebar > *:focus {
+.active {
   background-color: #2c2c2c;
 }
 
@@ -63,7 +63,7 @@ body {
     flex-direction: column;
   }
 
-  .sidebar {
+  .navbar {
     flex-direction: row;
     align-items: center;
   }
